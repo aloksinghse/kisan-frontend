@@ -1,7 +1,27 @@
 import { Button } from "flowbite-react";
 import React from "react";
+import axios from "axios";
 
 const ContactUs = () => {
+  const [email, setEmail] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [message, setMessage] = React.useState("");
+
+  const onSendMessage = async () => {
+    try {
+      let data = {
+        email,
+        subject,
+        message,
+      };
+      alert("Message sent successfully");
+      // let response = await axios.post("/api/contact", data);
+      // console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <section id="contact" className="bg-gray-100 dark:bg-gray-900 pt-12">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
@@ -35,6 +55,8 @@ const ContactUs = () => {
                 <input
                   type="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="name@gmail.com"
                   required
@@ -50,6 +72,8 @@ const ContactUs = () => {
                 <input
                   type="text"
                   id="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                   placeholder="Let us know how we can help you"
                   required
@@ -67,10 +91,14 @@ const ContactUs = () => {
                   rows="6"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Leave a comment..."
-                ></textarea>
+                  required
+                  onChange={(e) => setMessage(e.target.value)}
+                >
+                  {message}
+                </textarea>
               </div>
 
-              <Button type="submit" color="success">
+              <Button type="submit" color="success" onClick={onSendMessage}>
                 Send Message
               </Button>
             </form>

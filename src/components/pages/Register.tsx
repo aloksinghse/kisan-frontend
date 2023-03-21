@@ -3,6 +3,7 @@ import { TextInput, Button, Label } from "flowbite-react";
 import firebase from "../../utils/firebaseConfig";
 import "firebase/compat/auth";
 import Link from "next/link";
+import Router from "next/router";
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState("Alok");
@@ -12,6 +13,9 @@ const RegisterPage = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    Router.push("/");
+
     try {
     } catch (error) {
       console.log(error);

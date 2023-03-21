@@ -5,6 +5,7 @@ import firebase from "../../utils/firebaseConfig";
 // import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "firebase/compat/auth";
+import Router from "next/router";
 
 // import firebase from "./index";
 
@@ -40,19 +41,22 @@ const LoginPage = () => {
       //   await firebase.auth().signInWithEmailAndPassword(email, password);
       console.log("User logged in");
 
-      const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
+      Router.push("/");
+
+      // const auth = getAuth();
+      // createUserWithEmailAndPassword(auth, email, password)
+      //   .then((userCredential) => {
+      //     // Signed in
+      //     const user = userCredential.user;
+      //     console.log(user);
+
+      //     Router.push("/");
+      //   })
+      //   .catch((error) => {
+      //     const errorCode = error.code;
+      //     const errorMessage = error.message;
+      //     // ..
+      //   });
 
       //   const auth = getAuth();
       //   sendSignInLinkToEmail(auth, email, actionCodeSettings)
