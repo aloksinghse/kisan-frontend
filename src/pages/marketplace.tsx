@@ -65,7 +65,7 @@ const Marketplace = () => {
                     <Link href="#">{product.name}</Link>
                   </h2>
                   <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
-                    {product.description || "This is a product description"}
+                    {"This is a product description"}
                   </p>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-4">
@@ -75,7 +75,7 @@ const Marketplace = () => {
                       alt="Jese Leos avatar"
                     /> */}
                       <span className="font-medium text-2xl dark:text-white">
-                        {product.price} {product.currency || "INR"}
+                        {product.price} INR
                       </span>
                     </div>
                     <Button
