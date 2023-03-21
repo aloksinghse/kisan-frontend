@@ -1,7 +1,7 @@
-import LoginPage from "@/components/pages/Login";
+import RegisterPage from "@/components/pages/Register";
 import React from "react";
 
 const Register = () => {
-  return <LoginPage />;
+  return <RegisterPage />;
 };
 export default Register;

@@ -76,7 +76,7 @@ const LoginPage = () => {
   return (
     <div className="hero-bg-animation flex flex-col items-center justify-center py-28 bg-gray-100">
       <form
-        className="bg-white rounded-lg shadow-md p-8 grid gap-4 min-w-[500px]"
+        className="bg-white rounded-lg shadow-md p-8 grid gap-4 w-max-full sm:w-max-auto sm:min-w-[500px]"
         onSubmit={handleSubmit}
       >
         <div>
@@ -107,11 +107,11 @@ const LoginPage = () => {
             required
           />
         </div>
-        <Button type="submit" onClick={(e) => handleSubmit(e)}>
+        <Button type="submit" color="success" onClick={(e) => handleSubmit(e)}>
           Login
         </Button>
         <hr />
-        <Button href="/register" color="gray" className="text-center">
+        <Button href="/register" color="green" className="text-center">
           Create a new Account
         </Button>
       </form>

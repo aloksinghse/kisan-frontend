@@ -24,11 +24,7 @@
   }
 
   .hero-bg-animation {
-    background: linear-gradient(
-      270deg,
-      rgba(255, 0, 0, 0.2) 25%,
-      rgba(0, 255, 0, 0.2)
-    );
+    background: linear-gradient(270deg, #fafafa 25%, rgba(0, 200, 0, 0.05));
     /* background: linear-gradient(270deg, #246655, #ec4024); */
     background-size: 500% 500%;
 

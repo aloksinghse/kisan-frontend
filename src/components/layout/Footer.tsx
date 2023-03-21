@@ -36,18 +36,10 @@ const Footer = () => {
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <Link
-                    href="https://github.com/themesberg/flowbite"
+                    href="https://github.com/aloksinghse/kisan-frontend"
                     className="hover:underline "
                   >
                     Github
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://discord.gg/4eeurUVvTy"
-                    className="hover:underline"
-                  >
-                    Discord
                   </Link>
                 </li>
               </ul>
